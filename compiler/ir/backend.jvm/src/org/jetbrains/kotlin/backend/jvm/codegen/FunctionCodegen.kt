@@ -64,7 +64,7 @@ open class FunctionCodegen(
         var methodVisitor = createMethod(flags, signature)
 
         if (state.generateParametersMetadata && flags.and(Opcodes.ACC_SYNTHETIC) == 0) {
-            generateParameterNames(irFunction, methodVisitor, signature, state)
+            generateParameterNames(functionView, methodVisitor, signature, state)
         }
 
         if (irFunction.origin != IrDeclarationOrigin.FUNCTION_FOR_DEFAULT_PARAMETER) {
